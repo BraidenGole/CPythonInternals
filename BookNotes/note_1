@@ -1,1 +1,35 @@
+The unique thing about CPython is that it contains both runtime and the shared language specification.
+CPython is the official, or reference implementation of Python.
+------------------------------------------------------------------------------------------------------
+[Profile Guided Optimization] (PGO): Mac, Linux, and Windows build processes that have flags for PGO.
+PGO is not a feature of Python but rather a feature that many compilers include.
 
+PGO works by doing a initial compilation, then profiling the application by running a series of tests.
+The profile is analyzed and the comiler makes changes to the binary that improve performace.
+------------------------------------------------------------------------------------------------------
+[Function Inlining]: When a function is called from another function, then it will be inlined, or copied
+into the calling function to reduce stack size.
+
+[Virtual call speculation and Inlining]: If the call of a virtual function frequently targets a certain
+function, then the PGO can insert a direct call to that function, then the direct call can now be inlined.
+
+[Register allocation optimization]: Based on profile data results, the PGO will optimize register allocation.
+
+[Basic block optimization]: Basic block optimization allows for a block of code to temporally execute within
+a given frame to be placed in the same "locality".
+
+[Hot spot optimization]: Programs that have functions that spend most of the execution time
+can be optimized for speed.
+
+[Function layout optimization]: Functions that tend to be along the same path of
+execution are moved to the same section of the compiled application.
+
+[Conditional branch optimization]: The profile guided optimization can make decisions
+just like an if, else if, else, or switch statement. What this does is it spots the most
+commonly used path such as if I had a switch statement with 10 cases and case 1 was being
+used 85% of the time then that case will be moved up to the top so that the code is executed
+immediately.
+
+[Dead spot separation]: Source code that does not get called during the process of profile
+guided optimization is moved to a different part of the application.
+------------------------------------------------------------------------------------------------------
