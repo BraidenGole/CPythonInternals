@@ -1,1 +1,2 @@
-This section has notes stored as I am reading the book CPython Internals.
+This section contains notes to take as I am working my way through CPython Internals to keep track of important information
+definitions ect.
