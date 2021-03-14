@@ -1,1 +1,15 @@
+Why (CPython) is written in the C programming language and not Python?
+-------------------------------------------------------------------------
+When we look at the word "CPython" you most likely are thinking that this
+is a distribution of Python that is written in the C programming language.
 
+It would be fair to say that this is correct because the compiler is writen
+in pure C but many of the standard library modules are written in pure Python
+or a mix of C and Python.
+
+This is only part of the question the other part would be based
+on how compilers work altogether.
+
+There are two types of compilers.
+
+  NOT FINISHED YET !!!!!!!!!!!!!
