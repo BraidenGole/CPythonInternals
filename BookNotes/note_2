@@ -19,6 +19,6 @@ There are two types of compilers.
      already has a compiler.
   
 If you wanted to write your own programming language, then you would need
-an executable application to compiler your compiler. A compiler is needed to
+an executable application to compile your compiler. A compiler is needed to
 execute anything, so when new languages are often developed, they are first
 written in an older more stable language.
