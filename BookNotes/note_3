@@ -1,10 +1,10 @@
 Python uses (PEG) which is a "Parsing expression grammer" file: https://docs.python.org/3/reference/grammar.html
 -----------------------------------------------------------------------------------------------------------------
 (PEG): Is used to describe all possible strings in a language it also depicts how the entire language will be
-parsed. Regular expression like syntax is used to parse the language with very similar symols to regular expressions.
+parsed. Regular expression like syntax is used to parse the language with very similar symbols to regular expressions.
 
 CPython has two grammer files then other kind of file is written in a context-free notation called
-"Backus-Naur Form (BNF).
+"Backus-Naur Form" (BNF).
 -----------------------------------------------------------------------------------------------------------------
 The Parser Generator:
   
@@ -13,4 +13,17 @@ The Parser Generator:
   
     "Kind of like how everytime we compile a C program we need to recompile to apply any new changes."
     
-To be continued...
+The grammer files also have a second set of symbols called "Tokens" which is accessed by name for
+example.
+
+LPAR = '('
+RPAR = ')'
+LSQB = '['
+RSQB = ']'
+COLON = ':'
+COMMA = ','
+SEMI = ';'
+
+NOTE:
+The above is just a utility module, the actual tokens used for the Python parser uses a different
+process for identifying tokens.
