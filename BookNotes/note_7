@@ -35,7 +35,7 @@ Parser Tokenizer Flow:
   
   The concrete syntax trees CST's are a literal representation of the text in the code file.
   
-  Before the code is compiled the CST tree needs tto be converted into a higher level structure
+  Before the code is compiled the CST tree needs to be converted into a higher level structure
   that represents Pythons constructs. The kind of structure we are speaking about is the abstract
   syntax tree.
   
