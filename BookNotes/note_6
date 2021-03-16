@@ -49,6 +49,3 @@ Inputting data into the parser from a file:
       
       1. Instantiating the tokenizer state, tok_state, using PyTokenizer_FromFile()
       2. Converting the tokens into CST a list of nodes using parsetok()
-      
-  
-  
