@@ -1,1 +1,42 @@
+To execute any Python code, the interpreter needs three things to be in place they are:
+  
+  1. A module to execute.
+  2. A state to hold information such as variables.
+  3. A configuration, such as which options are enabled.
 
+When the above three things are provided Python can then execute the code and
+give the result.
+---------------------------------------------------------------------------------------
+Configuration State:
+
+  Before we can execute any Python code CPython runtime first establishes the
+  configuration of the runtime and any user provided options.
+  
+  1. PyPreConfig, is used for preinitialization configuration.
+  2. PyConfig, is used for the runtime configuration.
+  3. The compiled configuration of the CPython interpreter.
+---------------------------------------------------------------------------------------
+Preinitialization and Configuration:
+
+  PyPreConfig has three primary functions:
+    
+    1. Setting the Python memory allocator.
+    2. Configuring the LC_CTYPE locale to the system.
+    3. Encoding the character set UTF-8.
+    
+   PyPreConfig contains the following fields all of type int:
+    
+    allocator: Select a memory allocator, such as PYMEM_ALLOCATOR_MALLOC.
+    configure_locale: Set the LC_CTYPE locale.
+    ceorce_c_locale: If equal to 2, then coerce the C locale. If equal to 1,
+                     then read the LC_CTYPE locale to decide if it should be coerced.
+    ceorce_c_locale_warn: If nonzero, then emit a warning if the C locale is coerced.
+    dev_mode: Turn on developmment mode.
+    isolated: Enable isolated mode.
+    legacy_windows_fs_encoding: (Windows only) If nonzero, then disable UTF-8 mode and
+                                set the python file system encoding to "mbcs."
+    parse_argv: If nonzero, then use command-line arguments.
+    use_environment: If greater than zerom then use environment variables.
+    utf8_mode: If nonzero, then enable UTF-8 mode.
+---------------------------------------------------------------------------------------
+To be continued...
