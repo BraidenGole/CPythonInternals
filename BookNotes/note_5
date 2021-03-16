@@ -17,4 +17,30 @@ Input with a local module:
  In Python if you have an object and would like to retrieve an attribute from that class
  then we can use the assistance of getattr(). The near equivalent is PyObject_GetAttrString().
 ----------------------------------------------------------------------------------------------
-to be continued...
+Input from a script file or standard input:
+  
+  If the first argument given to Python is a filename, for example test.py, then CPython will
+  open a file handle and pass the handle to PyRun_SimpleExFlags() inside of Python > pythonrun.c
+  
+  There are three paths that the function can take base on the input supplied:
+    
+    1. If the argument supplied is a .pyc file, then it will invoke run_pyc_file()
+    2. If the file path is a script file .py, then it will run PyRun_FileExFlags()
+    3. If the file path is sdin becuase the user <command> | python, then treat 
+       stdin as a file handle and run PyRun_FileExFlags().
+----------------------------------------------------------------------------------------------
+Input form compiled bytecode:
+
+  If we take PATH #1 then instead of loading the file as plain text to then be parsed CPython
+  will make the assumption that the .pyc file contains a code object written to disk.
+  
+  In PyRun_SimpleFileExFlags(), there is a clause for the user providing a file path to a .pyc file.
+  
+  run_pyc_file() which is inside of Python > pythonrun.c "marshals" the code object from the .pyc file
+  using the file handle.
+  
+  The code object data structure is the CPythons compilers way to cache compiled code so that it doesn't
+  need to exhaustedly parse the file everytime the script is invoked.
+  
+  [Marshaling]: Is a term for copying the contents of a file into memory and converting them
+                to a specific data structure.
