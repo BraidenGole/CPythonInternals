@@ -1,1 +1,20 @@
-Comming soon.
+The wchar_t* type is used as a low level storage type for unicode data across CPython since
+the size of the type can store UTF-8 characters.
+
+When converting wchar_t* to a Python string, the objects > unicodeobject.c file has a 
+helper function, PyUnicode_FromWideChar(), that returns a unicode string. The actual encoding
+is done by PyUnicode_AsUTF8String()
+
+once that is complete the pymain_run_command() passes the Python bytes object to 
+PyRun_SimpleStringFlags() for execution.
+---------------------------------------------------------------------------------------------
+Input with a local module:
+
+  CPython imports a standard library module, runpy, and executes it using PyObject_Call()
+  The import is done using hte C API function PyImport_ImportModule() found within the file
+  called import.c
+  
+ In Python if you have an object and would like to retrieve an attribute from that class
+ then we can use the assistance of getattr(). The near equivalent is PyObject_GetAttrString().
+----------------------------------------------------------------------------------------------
+to be continued...
