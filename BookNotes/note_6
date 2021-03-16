@@ -1,10 +1,54 @@
 Lexing and parsing with syntax trees:
 
   In note_5 we spoke about how Python text is read from various sources
-  now its time to speak about what this needs to be converted into.
+  now its time to speak about what this needs to be converted into a
+  structure that the comiler can use.
   
-  We need to convert this to a structure so that way the compiler can
-  use it.
+  There are two main structures used to parse the code into CPython
+    1. Concrete Syntax Tree (CST)
+    2. Abstract Syntax Tree (AST)
+    
+  READER --TEXT--> LEXER --CST--> PARSER --AST--> COMPILER.
+    
+  The parsing process has two parts:
+  
+    1. Creating a concrete syntax tree using a parser tokenizer or lexer.
+    2. Creating abstract syntax tree from a concrete syntax tree using a parse.
+ ------------------------------------------------------------------------------
+ Concrete syntax tree generation:
+ 
+  This is known as the "parse tree", this is a ordered rooted tree
+  data structure that represents the code in a context free grammar.
+  
+  This data structure is initialized from a tokenizer plus a parser.
+  -----------------------------------------------------------------------------
+  CPython Parser-Tokenizer:
+  
+    CPython has a parser-tokenizer module, wirtten in C.
+    
+    Source Files related to the parser tokenizer:
+      
+      Python > pythonrun.c
+      Parser > parsetok.c
+      Parser > tokenizer.c
+      Parser > tokenizer.h
+      Include > token.h
+      Include > node.h
+      
+Inputting data into the parser from a file:
+
+  PyParser_ASTFromFileObject(): takes a file handle, compiler flags, and PyAreana instance
+  and converts the file object to a module.
+  
+  Here are the two steps:
+    
+    1. Convert to a CST using PyParser_ParseFileObject().
+    2. Convert to a AST or module using the AST function PyAST_FromNodeObject()
+    
+    The PyParser_ParseFileObject() function has two important tasks:
+      
+      1. Instantiating the tokenizer state, tok_state, using PyTokenizer_FromFile()
+      2. Converting the tokens into CST a list of nodes using parsetok()
+      
   
   
-  to be continued...
