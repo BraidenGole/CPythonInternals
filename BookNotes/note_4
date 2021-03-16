@@ -24,7 +24,7 @@ Preinitialization and Configuration:
     2. Configuring the LC_CTYPE locale to the system.
     3. Encoding the character set UTF-8.
     
-   PyPreConfig contains the following fields all of type int:
+    PyPreConfig contains the following fields all of type int:
     
     allocator: Select a memory allocator, such as PYMEM_ALLOCATOR_MALLOC.
     configure_locale: Set the LC_CTYPE locale.
