@@ -1,1 +1,9 @@
-
+Using Instaviz to View Abstract Syntax trees:
+  
+  (Windows 10 Command)
+  To install instaviz: `python -m pip install instaviz`
+  
+  Then open up REPL by typing python at the command prompt
+  now type the following program.
+  
+  comming soon...
