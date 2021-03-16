@@ -1,1 +1,10 @@
-comming soon.
+Lexing and parsing with syntax trees:
+
+  In note_5 we spoke about how Python text is read from various sources
+  now its time to speak about what this needs to be converted into.
+  
+  We need to convert this to a structure so that way the compiler can
+  use it.
+  
+  
+  to be continued...
