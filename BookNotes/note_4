@@ -39,4 +39,25 @@ Preinitialization and Configuration:
     use_environment: If greater than zerom then use environment variables.
     utf8_mode: If nonzero, then enable UTF-8 mode.
 ---------------------------------------------------------------------------------------
-To be continued...
+Runtime Configuration Data Structure (Second stage)
+
+  The runtime configuration can be set in different ways it has different levels of
+  precendence, the following below are the steps to verbose mode.
+  
+  Verbose mode:
+  
+    1. The default value for config->verbose is hardcoded to -1 in the source code.
+    2. The evironment variable PYTHONVERBOSE is used to set the value of config-verbose
+    3. If the environment variable does not exist, then the default value will remain -1.
+    4. In config_parse_cmdline() within Python>initconfig.c, the command-line flag is used
+       to set the value if provided.
+    5. This value is copied to a global variable PyVerboseFlag by _Py_GetGlobalVariablesAsDict()
+    
+Order of precendence:
+  
+  1. System configuration.
+  2. Command-line arguments.
+  3. Environment variables.
+  4. PyPreConfig.
+  5. PyConfig.
+  6. Runtime.
