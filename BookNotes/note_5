@@ -44,3 +44,6 @@ Input form compiled bytecode:
   
   [Marshaling]: Is a term for copying the contents of a file into memory and converting them
                 to a specific data structure.
+                
+  Once the object has been "marshaled" it is sent to run_eval_code_obj(), which calls Python > ceval.c
+  to execute the code.
