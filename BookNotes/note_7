@@ -1,1 +1,30 @@
-
+Parser Tokenizer Flow:
+  
+  The tokenizer takes in text input file and executes the tokenizer and parser in a loop
+  until the cursor is at the end of the text or a syntax error.
+  
+  Prior to execution, the parser tokenizer establishes tok_state a temorary
+  data structure to store all the states used by the tokenizer.
+  
+  The parser called tok_get() is used to get the next token the tokenizer passes
+  the resulting token ID to the parser, which uses the parser generator DFA to create a
+  node on the CST concrete syntax tree.
+  
+  The CST root node returned by PyParser_ParseFileObject() is essential for the next
+  stage of converting a CST into a AST tree.
+  
+  the node is defined in Include > node.h
+  
+  typedef struct _node
+  {
+    short n_type
+    char *n_str;
+    int  n_lineno;
+    int  n_col_offset;
+    int  n_nchildren;
+    struct _node *n_child;
+    int n_end_lineno;
+    int n_end_col_offset;
+  } node;
+  
+  to be coninued...
