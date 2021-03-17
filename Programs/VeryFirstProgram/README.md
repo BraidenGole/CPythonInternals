@@ -5,6 +5,7 @@ Steps:
   3. Create a testing file called `testing.py`
   
   Copy my `program.pyx` file contents into yours.
+  <br>
   Copy my `setup.py` file contents into yours.
   
   now run
