@@ -1,1 +1,54 @@
+The compiler:
 
+  After the parsing the interpreter has an AST with the operations, functions, classes
+  and namespaces of Python code.
+  
+  The job for the comiler is to turn the AST datastructure into instructons that the
+  CPU can understand.
+  
+  The compilation process is split up into two components:
+    
+    1. Compiler: traverse the AST data structure and create a control flow graph
+       CFG, which will represent the logical sequence of execution.
+
+    2. Assembler: Convert the nodes in the CFG to sequential, executable statements
+       known as bytecode.
+       
+ It is very important to remember that the unit of compilation for CPython is a module.
+ --------------------------------------------------------------------------------------
+ PyAST_CompileObject() is the main entry point to the CPythons compiler, it takes the
+ Python AST module as an argument with the name of the file plus the globals, locals, and
+ PyArena all instantiated earlier in the interpreter process.
+ 
+  Source Files:
+    
+    Python > compile.c
+    Include > compile.h
+---------------------------------------------------------------------------------------
+Terms:
+
+  The [compiler state] is implemented as a container type, which contains one symbol table.
+  
+  The symbol table contains many [variable names] and can optionally contain child symbol tables.
+  
+  The compiler type contains many [compiler units].
+  
+  Each compiler unit can contain many names, varibale names, constants, and cell variables.
+  
+  A compiler unit contains many [basic frame blocks].
+  
+  Basic frame blocks contain many [bytecode instructions].
+--------------------------------------------------------------------------------------
+Instantiating the compiler:
+
+  A global compiler state is created before the compiler starts. The compiler state
+  (compiler type) structure contains properties used by the compiler, the compiler flags
+  the stack and PyArena.
+  
+  The compiler state is instantiated inside PyAST_CopmileObject()
+  
+  PyAST_CompileObject() sets the passed value as the compiler state filename, which is used
+  to track traces and exceptions.
+  
+  Note:
+  The memory allocation areana for the copmiler is set to the one used by the interpreter.
