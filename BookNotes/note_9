@@ -3,7 +3,7 @@ The compiler:
   After the parsing the interpreter has an AST with the operations, functions, classes
   and namespaces of Python code.
   
-  The job for the comiler is to turn the AST datastructure into instructons that the
+  The job for the comiler is to turn the AST data structure into instructons that the
   CPU can understand.
   
   The compilation process is split up into two components:
