@@ -1,1 +1,21 @@
+Symbol Tables
 
+  Before the code is compiled a symbol table is created by PySymtable_BuildObject() API.
+  
+  The purpose of the symbol table is to provide a list of namespaces, globals, and locals
+  for the compiler to use for referencing and resolving scopes.
+
+  Source Files:
+  
+    Python > symtable.c
+    Include > symtable.h
+    Lib > symtable.py
+
+The symtable structure should be one symtable instance for the compiler, namespacing is essential.
+
+If we define a function called hello_world() in one class and declare the same thing in another we
+have to be sure that we know which one is being called inside the module.
+---------------------------------------------------------------------------------------------------
+The symbol table ensures that variables declared within a narrow scope don't automatically become globals.
+
+to be continued...
