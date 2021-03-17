@@ -16,6 +16,8 @@ Using Instaviz to View Abstract Syntax trees:
   NOTE: In my case I had to install "pyreadline" as well to get this going
   but only do so if prompted !
   
+[You will be greeted with the line below if everything went well !]
+
 Bottle v0.12.19 server starting up (using WSGIRefServer())...
 Listening on http://localhost:8080/
 Hit Ctrl-C to quit.
