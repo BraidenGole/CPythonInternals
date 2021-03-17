@@ -1,7 +1,7 @@
 # CPythonInternals
 This is a repository filled of code samples of the CPython interpreter. Learning from a book called "CPython Internals" on Real Python.
 
-<b>Highly recommend getting yourself a copy of CPythonInternals, purchase the book at:</b>
+<b>Highly recommend getting yourself a copy of CPython Internals, purchase the book at:</b>
 <br>
 https://realpython.com/products/cpython-internals-book/
 
