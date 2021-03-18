@@ -23,7 +23,7 @@ The symbol data structure symtable has the following fields:
   Field                   Type                  Purpose
   ----------------------------------------------------------------------------------------------------
   recursion_depth         int                   Current recursion depth
-  recursion_limit         int                   Recursion limit before REcursionError is raised.
+  recursion_limit         int                   Recursion limit before RecursionError is raised.
   st_blocks               PyObject * (dict)     Map of AST node addresses to symol table entries.
   
   st_cur                  _symtable_entry       Current symbol table entry.
