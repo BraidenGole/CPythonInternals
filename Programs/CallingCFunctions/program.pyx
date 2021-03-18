@@ -27,6 +27,6 @@ def bubbleSort(array):
                 array[nums + 1] = temp
     
     cdef int test = 0
-    for test in range(0, length - 1):
+    for test in range(0, length):
         print(array[test])
     
