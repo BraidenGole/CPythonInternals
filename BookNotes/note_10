@@ -18,4 +18,21 @@ have to be sure that we know which one is being called inside the module.
 ---------------------------------------------------------------------------------------------------
 The symbol table ensures that variables declared within a narrow scope don't automatically become globals.
 
-to be continued...
+The symbol data structure symtable has the following fields:
+  
+  Field                   Type                  Purpose
+  ----------------------------------------------------------------------------------------------------
+  recursion_depth         int                   Current recursion depth
+  recursion_limit         int                   Recursion limit before REcursionError is raised.
+  st_blocks               PyObject * (dict)     Map of AST node addresses to symol table entries.
+  
+  st_cur                  _symtable_entry       Current symbol table entry.
+  st_filename             PyObject * (str)      Name of the file being compiled.
+  st_future               PyFutureFeatures      Module's future features that affect the symbol table.
+  
+  st_global               PyObject * (dict)     Reference to the symbols in st_top.
+  st_nblocks              int                   Number of blocks used.
+  st_private              PyObject * (str)      Name of current class.
+  st_stack                PyObject * (list)     Stack of namespace information.
+  st_top                  _symtable_entry       Symbol table entry for the module.
+  ----------------------------------------------------------------------------------------------------
