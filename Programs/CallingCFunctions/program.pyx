@@ -1,6 +1,4 @@
-"""
-    [DESCRIPTION]: 
-"""
+
 from libc.stdio cimport printf
 from libc.string cimport strcmp, strlen
 
