@@ -38,5 +38,5 @@ class QuickSort:
             self.qsort(numbers, pivot + 1, end)
 
     def show(self, array):
-        for show in range(0, self.size):
-            print(array[show], end=" ")
+        for spots in range(0, self.size):
+            print(array[spots], end=" ")
