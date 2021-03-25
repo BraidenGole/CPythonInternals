@@ -40,12 +40,3 @@ class QuickSort:
     cpdef show_buckets(self, array):
         for show in range(0, self.size):
             print(array[show], end=" ")
-
-
-if __name__ == "__main__":
-    _size_of_numbers = 6
-    sort_op = QuickSort(_size_of_numbers)
-
-    x = [5, 3, 6, 1, 4, 2]
-    sort_op.qsort(x, 0, 5)
-    sort_op.show_buckets(x)
