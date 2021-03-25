@@ -1,5 +1,5 @@
 """
-    [DESCRIPTION]: Python 3 Bucket sort.
+    [DESCRIPTION]: Python 3 Quick Sort.
 """
 __title__ = "Bucket sort"
 __author__ = "Braiden Gole"
@@ -37,6 +37,6 @@ class QuickSort:
             self.qsort(numbers, start, pivot - 1)
             self.qsort(numbers, pivot + 1, end)
 
-    def show_buckets(self, array):
+    def show(self, array):
         for show in range(0, self.size):
             print(array[show], end=" ")
