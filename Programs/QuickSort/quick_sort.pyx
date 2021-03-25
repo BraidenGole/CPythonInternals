@@ -31,12 +31,12 @@ class QuickSort:
         numbers[end] = temp
         return low_point + 1
 
-    cpdef qsort(self, numbers, start, end):
+    def qsort(self, numbers, start, end):
         if start < end:
             pivot = self.partition(numbers, start, end)
             self.qsort(numbers, start, pivot - 1)
             self.qsort(numbers, pivot + 1, end)
 
-    cpdef show_buckets(self, array):
+    def show_buckets(self, array):
         for show in range(0, self.size):
             print(array[show], end=" ")
