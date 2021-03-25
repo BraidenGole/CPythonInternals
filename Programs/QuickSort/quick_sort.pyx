@@ -19,6 +19,7 @@ class QuickSort:
         cdef int pivot = numbers[end]
 
         cdef int temp = 0
+        cdef int nums = 0
         for nums in range(start, end):
             if numbers[nums] <= pivot:
                 low_point = low_point + 1
