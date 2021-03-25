@@ -1,7 +1,7 @@
 """
     [DESCRIPTION]: Python 3 Quick Sort.
 """
-__title__ = "Bucket sort"
+__title__ = "Quick sort"
 __author__ = "Braiden Gole"
 __version__ = "1.0.0"
 __copyright__ = "Copyright 2021, Braiden Gole"
