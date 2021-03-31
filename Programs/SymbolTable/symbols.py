@@ -22,10 +22,7 @@ class Human:
     def __str__(self):
         return self.name + self.last_name
 
-if __name__ == "__main__":
-
-    human = Human("Braiden", "Gole", "randomEmail@gmail.com", "519-743-9948")
-    print(human)
+human = Human("Braiden", "Gole", "randomEmail@gmail.com", "519-743-9948")
 """
 
 symbol_table = symtable.symtable(code, "symbols.py", "exec")
