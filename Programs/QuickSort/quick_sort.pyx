@@ -7,7 +7,7 @@ __version__ = "1.0.0"
 __copyright__ = "Copyright 2021, Braiden Gole"
 
 
-class QuickSort:
+cdef class QuickSort:
     """
     Name        :   QuickSort
     Purpose     :   This class will hold method that will assist in the
