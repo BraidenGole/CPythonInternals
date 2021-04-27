@@ -1,4 +1,4 @@
-TUTORIAL FOR USING EXISTING C CODE WITH CYTHON:
+TUTORIAL FOR USING EXISTING C CODE WITH CYTHON (FROM SCRATCH):
   1. Navigate to your desktop.
   2. Create a folder.
   3. Inside that folder create these files: `testing_interface.py` `setup.py` `program.pyx` `cprogram.pxd`
