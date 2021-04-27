@@ -5,3 +5,4 @@ TUTORIAL FOR USING EXISTING C CODE WITH CYTHON:
   4. Inside the same folder create a sub directory called `CSourceCode`
   5. Inside of the `CSourceCode` directory create two files `source.c` & `source.h`
   6. Now copy the contents from my example project files to get yourself with a working program using C code.
+  7. IMPORTANT: Don't forget the comment at the top of the `pyx` file: `# distutils: sources = CSourceCode/source.c`
