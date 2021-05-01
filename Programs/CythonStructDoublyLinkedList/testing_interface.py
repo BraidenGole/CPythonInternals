@@ -28,3 +28,5 @@ delete_2 = bytes("Kim", encoding="utf-8")
 algo.delete(delete_2)
 
 algo.show_all()
+
+algo.free_allocated_mem()
