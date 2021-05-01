@@ -108,6 +108,11 @@ cdef class DoublyLinkedList:
                         before.next = after
                 free(this_node)
             this_node = this_node.next
+    
+    def free_allocated_mem(self):
+        while (self.head != NULL):
+            free(self.head)
+            self.head = self.head.next
 
     def show_all(self):
         while (self.head != NULL):
