@@ -70,4 +70,5 @@ cdef class HashTableAlgorithm:
     def free_table(self):
         cdef int buckets
         for buckets in range(0, 16):
-            free(self.hash_table[buckets])
+            if (self.hash_table[buckets] != NULL):
+                free(self.hash_table[buckets])
