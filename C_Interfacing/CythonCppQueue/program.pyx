@@ -16,10 +16,6 @@ cdef class BraidensCppQueue:
     # Dynamically allocate the Queue instance.
     def __cinit__(self, size):
         self.queue = new cprogram.Queue(size)
-
-        # Methods to set the private data members.
-        self.queue.SetFront(0)
-        self.queue.SetRear(-1)
         
     def enqueue(self, data):
         self.queue = self.queue.EnQueue(self.queue, data)
