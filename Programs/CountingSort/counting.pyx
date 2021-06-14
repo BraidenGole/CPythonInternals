@@ -9,7 +9,7 @@ __date__ = "2021-06-14"
 
 def counting_sort(array):
 
-    cdef int length_of_array = len(array)
+    length_of_array = len(array)
     cdef int nums
 
     # Find the maximum number in the array.
