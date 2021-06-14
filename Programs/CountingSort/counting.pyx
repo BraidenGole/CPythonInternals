@@ -31,7 +31,6 @@ def counting_sort(array):
     for nums in range(1, len(count)):
         count[nums] += count[nums - 1]
 
-    # Look for the index of each number in the main array
     cdef int index = 0
     for nums in range(length_of_array - 1, -1, -1):
         number = array[nums] - minimum
