@@ -99,8 +99,6 @@ cdef class DoublyLinkedList:
                         self.tail = this_node.prev
                         node_previous.next = NULL
                     else:
-                        
-
                         before = this_node.prev
                         after = this_node.next
 
