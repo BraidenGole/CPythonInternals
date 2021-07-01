@@ -30,7 +30,8 @@ cdef class DoublyLinkedList:
         self.next_node = NULL
 
     def create(self, word):
-        cdef Node* new_node = <Node*>malloc(sizeof(Node))
+        cdef Node* new_node = NULL
+        new_node = <Node*>malloc(sizeof(Node))
         if not new_node:
             raise MemoryError()
 
